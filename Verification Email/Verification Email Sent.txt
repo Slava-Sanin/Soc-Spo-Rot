@@ -1,0 +1,4 @@
+Verification Email Sent
+We've sent an email to slava.sanin@gmail.com. You'll need to read that and click on the verification link to finish creating your account.
+
+Please check your Spam folder if you do not see the verification email in your Inbox.

@@ -1,0 +1,4 @@
+
+Email Verification Successful
+
+Your email address has been verified. Please Log in to continue.

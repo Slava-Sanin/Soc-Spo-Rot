@@ -1,0 +1,892 @@
+body {
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+}
+
+.wraper {
+    width: 621px;
+    // height: 580px;
+    margin: 0 auto;
+    border: 2px solid #E7D2A5;
+    background-color: #EADCBB;
+}
+
+.header {
+    background: linear-gradient(to right, darkblue, #4B9BC6);
+    // height: 32px;
+}
+
+.header p {
+    color: yellow;
+    font-weight: bold;
+ //   line-height: 32px;
+ //   height: inherit;
+    border: solid #EADCBB;
+    margin: 0;
+}
+
+.header p span {
+    vertical-align: 10px;
+    padding-left: 130px;
+}
+
+/* The navigation menu links */
+.menu {
+    background-color: #EADCBB;
+    //height: 24px;
+    width: 316px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin: 0 2px 0 2px;
+    /*border: 1px solid;*/
+}
+
+.menu a {
+    padding: 10px 14px 10px 14px;
+    text-decoration: none;
+    font-size: 15px;
+    color: black; //#818181;
+ //   display: block;
+    transition: 0.3s
+
+}
+
+/* When you mouse over the navigation links, change their color */
+.menu a:hover {
+    color: white;
+}
+/* End navigation menu links */
+
+.wraper hr {
+    //margin: 1px;
+    color: #E7D2A5;
+    margin: 0 4px 4px 4px;
+}
+
+.toolbar {
+    background-color: #EADCBB;
+    /*border-bottom: solid 1px black;*/
+    /*padding: 2px 2px;*/
+  //  border: solid blue;
+    margin: 0 4px 3px 4px;
+    height: 46px;
+}
+
+.toolbar button {
+    width: 48px;
+    height: 48px;
+    padding: 2px;
+    margin: -1px;
+    cursor: pointer;
+}
+
+.toolbar #btn-socoban {
+    background: url("../G4W/images/BIGTOOL22.png")  2px 2px no-repeat;
+    background-clip: content-box;
+}
+
+.toolbar #btn-spot {
+    background: url("../G4W/images/BIGTOOL22.png") -38px 2px no-repeat;
+    background-clip: content-box;
+}
+
+.toolbar #btn-rotms {
+    background: url("../G4W/images/BIGTOOL22.png") -78px 2px no-repeat;
+    background-clip: content-box;
+}
+
+.toolbar #btn-sound {
+    margin-left: 13px;
+}
+
+.sound {
+    background: url("../G4W/images/BIGTOOL22.png") -158px 2px no-repeat;
+    background-clip: content-box;
+}
+
+.no-sound {
+    background: url("../G4W/images/no_sound.png") 2px no-repeat;
+    background-clip: content-box;
+}
+
+.toolbar #btn-save {
+    background: url("../G4W/images/BIGTOOL22.png") -198px 2px no-repeat;
+    background-clip: content-box;
+}
+
+.toolbar #btn-new {
+    background: url("../G4W/images/BIGTOOL22.png") -238px 2px no-repeat;
+    background-clip: content-box;
+}
+
+.toolbar #btn-finish {
+    background: url("../G4W/images/BIGTOOL22.png") -318px 2px no-repeat;
+    background-clip: content-box;
+}
+
+.toolbar #btn-undo {
+    background: url("../G4W/images/BIGTOOL22.png") -358px 2px no-repeat;
+    background-clip: content-box;
+}
+
+.main-window {
+   // width: 640px;
+   // height: 426px;
+    background: url("../G4W/images/GRAND/GRAND11.bmp") no-repeat;
+    border: 2px solid #E7D2A5;
+}
+
+.status {
+    height: 25px;
+    border-top: 2px solid gray;
+    border-left: 2px solid gray;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+    padding-left: 0px;
+    line-height: 25px;
+    line-height: -moz-block-height;
+    text-align: center;
+}
+
+.separator1 {
+    width: 0px;
+    height: 46px;
+    border-right: 2px solid #8B8B8B;
+    border-left: 2px solid #F4F4F4;
+    //background-color: #E7D2A5;
+    //float: left;
+    position: relative;
+    //left: 154px;
+    top: 23px;
+    margin-left: 6px;
+    display: inline-block;
+}
+
+/*************************** Tabs ****************************************/
+.ui-tabs-nav.ui-helper-reset.ui-helper-clearfix.ui-widget-header.ui-corner-all {
+    background-image: none;
+    background-color: #EADCBB;
+    border-radius: 0;
+}
+
+#tabs-1, #tabs-2, #tabs-3 {
+    height: 364px;
+    background-size: 100% 100%;
+    border: 4px solid #97FF97;
+    padding: 0;
+}
+
+#tabs-1 {
+    background: url("../G4W/images/GRAND/GRAND12.bmp") no-repeat;
+}
+
+#tabs-2 {
+    background: url("../G4W/images/GRAND/GRAND13.bmp") no-repeat;
+}
+
+#tabs-3 {
+    background: url("../G4W/images/GRAND/GRAND14.bmp") no-repeat;
+}
+
+#tabs {
+    //height: 417px;
+    padding: 0;
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+    border-radius: 0px;
+}
+
+/*************************** End Tabs ************************************/
+/*************************** Socoban ************************************/
+.div-soc-Z {
+    //background: url("../G4W/images/Socoban/socoban.png") 0 0 no-repeat;
+}
+
+.div-soc-1 {
+    background: url("../G4W/images/Socoban/socoban.png") -25px 0 no-repeat;
+}
+
+.div-soc-2 {
+    background: url("../G4W/images/Socoban/socoban.png") -50px 0 no-repeat;
+}
+
+.div-soc-3 {
+    background: url("../G4W/images/Socoban/socoban.png") -75px 0 no-repeat;
+}
+
+.div-soc-4 {
+    background: url("../G4W/images/Socoban/socoban.png") -100px 0 no-repeat;
+}
+
+.div-soc-5 {
+    background: url("../G4W/images/Socoban/socoban.png") -125px 0 no-repeat;
+}
+
+.div-soc-Z,.div-soc-1,.div-soc-2,.div-soc-3,.div-soc-4,.div-soc-5 {
+    float: left;
+    width: 25px;
+    height: 25px;
+}
+/*************************** End Socoban *********************************/
+/****************************** Rotms ************************************/
+.div-rot-Z {
+    //background: url("../G4W/images/Rotms/rotms.png") 0 0 no-repeat;
+}
+
+.div-rot-0 {
+    background: url("../G4W/images/Rotms/rotms.png") 0 0 no-repeat;
+}
+
+.div-rot-1 {
+    background: url("../G4W/images/Rotms/rotms.png") -25px 0 no-repeat;
+}
+
+.div-rot-2 {
+    background: url("../G4W/images/Rotms/rotms.png") -50px 0 no-repeat;
+}
+
+.div-rot-3 {
+    background: url("../G4W/images/Rotms/rotms.png") -75px 0 no-repeat;
+}
+
+.div-rot-4 {
+    background: url("../G4W/images/Rotms/rotms.png") -100px 0 no-repeat;
+}
+
+.div-rot-5 {
+    background: url("../G4W/images/Rotms/rotms.png") -125px 0 no-repeat;
+}
+
+.div-rot-S {
+    background: url("../G4W/images/Rotms/rotms.png") -150px 0 no-repeat;
+}
+
+.div-rot-Y {
+    background: url("../G4W/images/Rotms/rotms.png") -175px 0 no-repeat;
+}
+
+.div-rot-B {
+    background: url("../G4W/images/Rotms/rotms.png") -200px 0 no-repeat;
+}
+
+.div-rot-G {
+    background: url("../G4W/images/Rotms/rotms.png") -225px 0 no-repeat;
+}
+
+.div-rot-K {
+    background: url("../G4W/images/Rotms/rotms.png") -250px 0 no-repeat;
+}
+
+.div-rot-R {
+    background: url("../G4W/images/Rotms/rotms.png") -275px 0 no-repeat;
+}
+
+.div-rot-Z,.div-rot-0,.div-rot-1,.div-rot-2,.div-rot-3,.div-rot-4,.div-rot-5,
+.div-rot-S,.div-rot-Y,.div-rot-B,.div-rot-G,.div-rot-K,.div-rot-R {
+    float: left;
+    width: 25px;
+    height: 25px;
+}
+
+.div-rot-1,.div-rot-2,.div-rot-3,.div-rot-4,.div-rot-5 {
+    cursor: pointer;
+}
+/*************************** End Rotms *********************************/
+/*************************** Spot ************************************/
+.div-spo-Z {
+    background: url("../G4W/images/Spot/spots.png") -80px 0 no-repeat;
+}
+
+.div-spo-0 {
+    background: url("../G4W/images/Spot/spots.png") 0 0 no-repeat;
+}
+
+.div-spo-2 {
+    background: url("../G4W/images/Spot/spots.png") -80px -80px no-repeat;
+}
+
+.div-spo-2big {
+    background: url("../G4W/images/Spot/spots.png") 0px -80px no-repeat;
+}
+
+.div-spo-3 {
+    background: url("../G4W/images/Spot/spots.png") -80px -120px no-repeat;
+}
+
+.div-spo-3big {
+    background: url("../G4W/images/Spot/spots.png") 0px -120px no-repeat;
+}
+
+.div-spo-4 {
+    background: url("../G4W/images/Spot/spots.png") -80px -160px no-repeat;
+}
+
+.div-spo-4big {
+    background: url("../G4W/images/Spot/spots.png") 0px -160px no-repeat;
+}
+
+.div-spo-5 {
+    background: url("../G4W/images/Spot/spots.png") -80px -200px no-repeat;
+}
+
+.div-spo-5big {
+    background: url("../G4W/images/Spot/spots.png") 0px -200px no-repeat;
+}
+
+.div-spo-6 {
+    background: url("../G4W/images/Spot/spots.png") -80px -240px no-repeat;
+}
+
+.div-spo-6big {
+    background: url("../G4W/images/Spot/spots.png") 0px -240px no-repeat;
+}
+
+
+
+.div-spo-Z,
+.div-spo-0,
+.div-spo-2,.div-spo-2big,
+.div-spo-3,.div-spo-3big,
+.div-spo-4,.div-spo-4big,
+.div-spo-5,.div-spo-5big,
+.div-spo-6,.div-spo-6big {
+    float: left;
+    width: 40px;
+    height: 40px;
+}
+/*************************** End Spot *********************************/
+
+#tabs-1 .board, #tabs-3 .board {
+    width: 577px;
+    height: 100%;
+    border: 1px solid gray;
+    float: left;
+    box-sizing: border-box;
+}
+
+#tabs-2 .board {
+    width: 100%;
+    height: 100%;
+    border: 1px solid gray;
+    float: left;
+    box-sizing: border-box;
+    padding: 42px 2px;
+}
+
+#tabs-1 .scroll, #tabs-3 .scroll {
+    width: 30px;
+    height: 100%;
+    float: right;
+    border: 1px solid black;
+    background: url("../G4W/images/Socoban/fon24.bmp");
+    box-sizing: border-box;
+}
+
+.scroll .up {
+    width: 100%;
+    height: 29px;
+    background: url("../G4W/images/up.png") no-repeat;
+    background-size: 100% 100%;
+    background-color: #EADCBB;
+    cursor: pointer;
+}
+
+.scroll .down {
+    width: 28px;
+    height: 28px;
+    background: url("../G4W/images/down.png") no-repeat;
+    background-size: 100% 100%;
+    background-color: #EADCBB;
+    position: absolute;
+    top: 386px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.scroll .tracking {
+    width: 100%;
+    height: 0px;
+    background-size: 100% 100%;
+    /*background: url("../G4W/images/scroll_fon.png") no-repeat;*/
+}
+
+.scroll .lev-position {
+    width: 100%;
+    height: 15px;
+    background-color: #EADCBB;
+    border: 2px black;
+    background-size: 100% 100%;
+    /*background: url("../G4W/images/thumb.png") no-repeat;*/
+}
+/**/
+#tabs-1 .scroll .up {
+    background-image: url("../G4W/images/arrow_up.png"), url("../G4W/images/Socoban/socoban.png");
+    background-repeat: no-repeat;
+    /* background-position-x: -180px; */
+    background-size: inherit;
+    background-position: center, -101px 0px;
+}
+
+#tabs-1 .scroll .down {
+    /*background: #EADCBB url("../G4W/images/arrow_down.png") no-repeat;*/
+    background-image: url("../G4W/images/arrow_down.png"), url("../G4W/images/Socoban/socoban.png");
+    background-repeat: no-repeat;
+    /* background-position-x: -180px; */
+    background-size: inherit;
+    background-position: center, -101px 0px;
+}
+
+#tabs-1 .scroll .tracking {
+    background: url("../G4W/images/scroll_fon.png") no-repeat;
+}
+
+#tabs-1 .scroll .lev-position {
+    /* background-color: #EADCBB; */
+    background: url("../G4W/images/scroll_socoban__fon.png") no-repeat;
+    background-size: 100% 100%;
+}
+/**/
+/**/
+#tabs-3 .scroll .up {
+    background: url("../G4W/images/up.png") no-repeat;
+}
+
+#tabs-3 .scroll .down {
+    background: url("../G4W/images/down.png") no-repeat;
+    /*background-color: #EADCBB;*/
+}
+
+#tabs-3 .scroll .tracking {
+    /*background: url("../G4W/images/scroll_fon.png") no-repeat;*/
+}
+
+#tabs-3 .scroll .lev-position {
+    /*background-color: #EADCBB;*/
+    background: url("../G4W/images/thumb.png") no-repeat;
+    background-size: 100% 100%;
+}
+/**/
+/**/
+
+#status_socoban,
+#status_spot,
+#status_rotms {
+    height: inherit;
+    padding: 0;
+  //  border: 1px solid;
+    display: flex;
+}
+
+#status_socoban .time,
+#status_socoban .level,
+#status_socoban .moves,
+#status_spot .time,
+#status_spot .player,
+#status_rotms .time,
+#status_rotms .level,
+#status_rotms .moves,
+#status_rotms .score {
+    height: auto;
+    width: auto;
+    float: left;
+    border-top: solid gray 1px;
+    border-bottom: solid white 1px;
+//  border-left: solid #9d9fa2 1px;
+    border-left: solid gray 2px;
+//  border-right: solid #eceff3 1px;
+    border-right: solid white 2px;
+    flex: auto;
+    padding-left: 4px;
+    font-size: 10pt;
+    line-height: -moz-block-height;
+}
+/**/
+.div-rot-1:hover {
+    background: url("../G4W/images/Rotms/rotms.png") -25px -25px no-repeat;
+}
+
+.div-rot-2:hover {
+    background: url("../G4W/images/Rotms/rotms.png") -50px -25px no-repeat;
+}
+
+.div-rot-3:hover {
+    background: url("../G4W/images/Rotms/rotms.png") -75px -25px no-repeat;
+}
+
+.div-rot-4:hover {
+    background: url("../G4W/images/Rotms/rotms.png") -100px -25px no-repeat;
+}
+
+.div-rot-5:hover {
+    background: url("../G4W/images/Rotms/rotms.png") -125px -25px no-repeat;
+}
+
+/************ Player and Computer colors in game Spot *********************/
+
+.Spot_toolbar {
+//    width: 172px;
+//    height: 48px;
+//    border: 1px solid gray;
+    position: relative;
+//    left: 450px;
+//    top: 105px;
+    float: right;
+    z-index: 100;
+    top: -26px;
+    margin-right: 24px;
+    display: none;
+}
+
+.Spot_toolbar p {
+    margin: 0;
+    padding: 0;
+    font-size: small;
+    padding-bottom: 9px;
+//    text-align: center;
+}
+
+#Spot_toolbar_button {
+    width: 12px;
+    height: 40px;
+//    border: 3px solid gray;
+    margin: 29px 5px 0px;
+}
+
+.Spot_color.left {
+    width: 40px;
+    height: 40px;
+    background: url("../G4W/images/Spot/spots.png") -80px -80px no-repeat black;
+}
+
+.Spot_color.right {
+    width: 40px;
+    height: 40px;
+    background: url("../G4W/images/Spot/spots.png") -80px -120px no-repeat black;
+}
+
+.ramka {
+    /*float: left;*/
+    border: 1px solid gray;
+    padding: 2px 8px 4px;
+    width: 48px;
+}
+
+.ramka.left {
+    padding-left: 10px;
+    padding-right: 2px;
+}
+
+.ramka.right {
+    padding-left: 2px;
+    padding-right: 10px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+/*************************** Spot's options **********************************/
+#Spot_color_dialog {
+    width: 270px;
+    height: 464px;
+    margin: 0 auto;
+    border: 4px solid;
+    border-top-color: #E7D2A5;
+    border-right-color: #776737;
+    border-bottom-color: #776737;
+    border-left-color: lightyellow;
+// border-top: 4px solid lightyellow;
+    position: relative;
+    top: -560px;
+    z-index: 200;
+    background-color: #EADCBB;
+    box-shadow: 30px 10px 5px rgba(0, 0, 0, .5);
+    display: none;
+}
+
+.wraper2 {
+//    width: 150px;
+    height: inherit;
+//    margin: 0 auto;
+//    border: 2px solid #E7D2A5;
+//    background-color: #EADCBB;
+}
+
+#Spot_color_dialog .header p {
+    border: 0px;
+    text-align: center;
+    padding: 3px;
+}
+
+#Spot_color_dialog .header {
+    height: 28px;
+}
+
+.wraper2 .header button {
+    float: right;
+    top: -25px;
+    position: relative;
+    cursor: pointer;
+}
+
+.closed {
+    display: none;
+}
+
+.showen {
+    display: block;
+}
+
+.div2 {
+//  height: 430px;
+    border: 3px solid;
+    // border-left-color: #8B8B8B;
+    border-top-color: #776737;
+    border-left-color: #776737;
+    border-right-color: #FFFBF3;
+    border-bottom-color: #FFFBF3;
+    /*#9A9370*/
+    margin: 15px;
+ // background-color: #EADCBB;
+}
+
+.div3 {
+//    height: 424px;
+    border: 3px solid;
+    // border-left-color: #8B8B8B;
+    border-top-color: #FFFBF3;
+    border-left-color: #FFFBF3;
+    border-right-color: #776737;
+    border-bottom-color: #776737;
+    /*#9A9370*/
+ // margin: 15px;
+ // background-color: #EADCBB;
+}
+
+.div4 {
+    height: 364px;
+    border: 4px solid;
+    // border-left-color: #8B8B8B;
+    border-top-color: #E7D2A5;
+    border-right-color: #776737;
+    border-bottom-color: #776737;
+    border-left-color: lightyellow;    /*#9A9370*/
+//    margin: 11px;
+//   background-color: #EADCBB;
+}
+
+.div5 {
+    height: 95px;
+    margin: 0 auto;
+    //border: 1px solid red;
+}
+
+.div6 {
+    //height: 110px;
+    margin: 5px;
+    border: 4px solid;
+    float: left;
+    border-top-color: #E7D2A5;
+    border-right-color: #776737;
+    border-bottom-color: #776737;
+    border-left-color: lightyellow;    /*#9A9370*/
+}
+
+.div7 {
+    height: 75px;
+    border: 2px solid;
+    border-left-color: white;
+    border-right-color: gray;
+    border-bottom-color: wheat;
+    border-top-color: wheat;
+    //float: left;
+    margin: 5px 17px 0px;
+}
+
+.div8 {
+    //width: 60px;
+    border: 2px solid;
+    border-top-color: white;
+    border-bottom-color: gray;
+    border-left-color: wheat;
+    border-right-color: wheat;
+    //float: left;
+    //margin: 5px 17px;
+}
+
+.div9 {
+    float: left;
+    width: 36px;
+    //border: 1px solid black;
+}
+
+.div10,.div11,.div12 {
+    border: 1px solid black;
+    height: 200px;
+//    flex: auto;
+//    display: flex;
+    float: left;
+}
+
+.div11 {
+    width: 40px;
+   // height: 40px;
+    background: url("../G4W/images/Spot/spots.png") -80px -80px no-repeat black;
+}
+
+.wraper3 form input {
+    width: 64px;
+    height: 37px;
+}
+
+.wraper3 {
+//    height: 210px;
+    margin: 0 auto;
+//    border: 1px solid yellow;
+    display: table;
+    width: -moz-fit-content;
+}
+
+.div13 {
+//    border: 1px solid red;
+//    width: 36px;
+    margin: 5px auto;
+    float: left;
+}
+
+.div13 .div7 {
+    margin-top: 0px;
+    margin-bottom: 4px;
+    height: 15px;
+}
+
+.div13 button {
+ //   position: unset !important;
+ //   margin: 0 auto;
+ //   padding: 0px 2px;
+}
+
+.div14 {
+    float: left;
+    border: 3px solid;
+// border-left-color: #8B8B8B;
+    border-top-color: #776737;
+    border-left-color: #776737;
+    border-right-color: #FFFBF3;
+    border-bottom-color: #FFFBF3;
+    width: 64px;
+    margin: 30px 4px 0px;
+    text-align: center;
+    padding: 2px 0px;
+    font-weight: bold;
+    font-family: "Times New Roman" ,Times, serif;
+    user-select: none;
+    background: rgba(37, 37, 32, 0.1) none repeat scroll 0% 0%;
+}
+
+.div15 {
+    border: 1px solid black;
+    margin: 12px;
+}
+/*--------------------------------------------------------------*/
+/*#first-or-second {*/
+    /*cursor: pointer;*/
+    /*height: 22px;*/
+    /*width: 38px;*/
+    /*background-image: none;*/
+    /*border-radius: 4px;*/
+    /*background-color: aqua;*/
+/*}*/
+
+/*#first-or-second {*/
+    /*cursor: pointer;*/
+    /*border-top: 1px solid #96d1f8;*/
+    /*background: #65a9d7;*/
+    /*background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));*/
+    /*background: -webkit-linear-gradient(top, #3e779d, #65a9d7);*/
+    /*background: -moz-linear-gradient(top, #3e779d, #65a9d7);*/
+    /*background: -ms-linear-gradient(top, #3e779d, #65a9d7);*/
+    /*background: -o-linear-gradient(top, #3e779d, #65a9d7);*/
+    /*padding: 2px 8px;*/
+    /*-webkit-border-radius: 8px;*/
+    /*-moz-border-radius: 8px;*/
+    /*border-radius: 8px;*/
+    /*-webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;*/
+    /*-moz-box-shadow: rgba(0,0,0,1) 0 1px 0;*/
+    /*box-shadow: rgba(0,0,0,1) 0 1px 0;*/
+    /*text-shadow: rgba(0,0,0,.4) 0 1px 0;*/
+    /*color: white;*/
+    /*font-size: 14px;*/
+    /*font-family: Georgia, serif;*/
+    /*text-decoration: none;*/
+    /*vertical-align: middle;*/
+    /*user-select: none;*/
+/*}*/
+/*#first-or-second:hover {*/
+    /*border-top-color: #28597a;*/
+    /*background: #28597a;*/
+    /*color: #ccc;*/
+/*}*/
+/*#first-or-second:active {*/
+    /*border-top-color: #1b435e;*/
+    /*background: #1b435e;*/
+/*}*/
+
+/*--------------------------------------------------------------*/
+
+#first-or-second {
+    display: inline-block;
+    text-shadow: 1px 1px #fff;
+    text-decoration: none;
+    padding: 4px;
+    border: 1px solid #aaa;
+    border-radius: 100px;
+    outline: none;
+    background: #d6dbbf no-repeat;
+    background-image:
+            linear-gradient(to left, #aaa, #aaa),
+            linear-gradient(to left, #feffe8, #feffe8),
+            linear-gradient(#feffe8, #d6dbbf);
+    background-position: calc(100% - 2.7em) 0, calc(100% - 2.7em + 1px) 0, 0 0;
+    background-size: 1px 100%, 1px 100%, auto auto;
+    overflow: hidden;
+    width: 38px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+}
+
+/*#first-or-second:after {*/
+    /*content: "\bb";*/
+    /*position: relative;*/
+    /*bottom: 0;*/
+    /*display: inline-block;*/
+    /*margin-left: 1.4em;*/
+    /*vertical-align: middle;*/
+    /*font-family: "Times","Times New Roman","serif","sans-serif","EmojiSymbols";*/
+    /*font-weight: 700;*/
+    /*font-size: 140%;*/
+    /*-webkit-transform: rotate(90deg);*/
+    /*transform: rotate(90deg);*/
+/*}*/
+/*#first-or-second:hover {*/
+    /*background-color: #fdfd9f;*/
+    /*background-image:*/
+            /*linear-gradient(to left, #aaa, #aaa),*/
+            /*linear-gradient(to left, #feffe8, #feffe8),*/
+            /*linear-gradient(#fffce7, #fdfd9f);*/
+/*}*/
+/*#first-or-second:active:after {*/
+    /*bottom: -1.2em;*/
+    /*transition: .3s;*/
+/*}*/
+
+/*--------------------------------------------------------------*/
+
+input[name="Player"],input[name="Computer"] {
+    cursor: pointer;
+}
