@@ -1,9 +1,14 @@
 <?php
-session_start();
 
-$_SESSION["username_and_password_is"] = false;
-$host = $_SERVER['HTTP_HOST'];
-header("Location: http://$host/My_Sites/SocSpoRot/");
+    session_start();
 
-exit;
+//    $_SESSION['user_login'] = '';
+//    $_SESSION['user_email'] = '';
+//    $_SESSION["username_and_password_is"] = false;
+
+    session_unset();
+    session_destroy();
+
+    header("Location: index.php");
+
 ?>

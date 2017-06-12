@@ -1,6 +1,10 @@
 body {
-    overflow-x: hidden !important;
-    overflow-y: hidden !important;
+//    overflow-x: hidden !important;
+//    overflow-y: hidden !important;
+    margin-top: 0px;
+    margin-bottom: 0px;
+//    max-height: 629px;
+//    overflow: hidden;
 }
 
 .wraper {
@@ -9,32 +13,19 @@ body {
     margin: 0 auto;
     border: 2px solid #E7D2A5;
     background-color: #EADCBB;
+ //   max-height: 625px;
+    overflow: hidden;
 }
 
-.header {
-    background: linear-gradient(to right, darkblue, #4B9BC6);
-    // height: 32px;
-}
+/*header here*/
 
-.header p {
-    color: yellow;
-    font-weight: bold;
- //   line-height: 32px;
- //   height: inherit;
-    border: solid #EADCBB;
-    margin: 0;
-}
-
-.header p span {
-    vertical-align: 10px;
-    padding-left: 130px;
-}
+/*           */
 
 /* The navigation menu links */
 .menu {
     background-color: #EADCBB;
     //height: 24px;
-    width: 316px;
+    //width: 316px;
     padding-top: 4px;
     padding-bottom: 4px;
     margin: 0 2px 0 2px;
@@ -97,6 +88,7 @@ body {
 
 .toolbar #btn-sound {
     margin-left: 13px;
+    margin-right: 4px;
 }
 
 .sound {
@@ -134,6 +126,8 @@ body {
    // height: 426px;
     background: url("../G4W/images/GRAND/GRAND11.bmp") no-repeat;
     border: 2px solid #E7D2A5;
+    max-height: 422px;
+    min-height: 422px;
 }
 
 .status {
@@ -146,6 +140,8 @@ body {
     line-height: 25px;
     line-height: -moz-block-height;
     text-align: center;
+    z-index: 20;
+    background-color: #EADCBB;
 }
 
 .separator1 {
@@ -178,6 +174,10 @@ body {
 
 #tabs-1 {
     background: url("../G4W/images/GRAND/GRAND12.bmp") no-repeat;
+}
+
+#tabs-2, #tabs-3 {
+    display: none;
 }
 
 #tabs-2 {
@@ -625,10 +625,9 @@ body {
 #Spot_color_dialog .header {
     height: 28px;
 }
-
-.wraper2 .header button {
+#Spot_color_dialog .wraper2 .header button {
     float: right;
-    top: -25px;
+    top: -37px;
     position: relative;
     cursor: pointer;
 }
@@ -740,7 +739,9 @@ body {
 
 .wraper3 form input {
     width: 64px;
-    height: 37px;
+    height: 24px;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 .wraper3 {
@@ -890,3 +891,60 @@ body {
 input[name="Player"],input[name="Computer"] {
     cursor: pointer;
 }
+
+.virtual_buttons {
+    width: 137px;
+ //   width: -moz-fit-content;
+ //   height: 150px;
+ //   border: 1px solid gray;
+    position: relative;
+    left: 415px;
+    top: -82px;
+ //   float: right;
+    z-index: 1000;
+ //   margin-right: 24px;
+    display: none;
+}
+
+.virtual_buttons th {
+ //   border: 1px solid gray;
+    width: 41px;
+    height: 43px;
+}
+
+#virtual_up {
+    background: url("../G4W/images/arrows4.png") -9px -6px no-repeat;
+    cursor: pointer;
+}
+
+#virtual_left {
+    background: url("../G4W/images/arrows4.png") -56px -6px no-repeat;
+    cursor: pointer;
+}
+
+#virtual_right {
+    background: url("../G4W/images/arrows4.png") -343px -6px no-repeat;
+    cursor: pointer;
+}
+
+#virtual_down {
+    background: url("../G4W/images/arrows4.png") -150px -6px no-repeat;
+    cursor: pointer;
+}
+
+#virtual_move {
+    cursor: pointer;
+}
+
+.virtual_move_on {
+    //cursor: pointer;
+    background: url("../G4W/images/‏‏move5_30x30.png") no-repeat;
+    background-size: cover;
+}
+
+.virtual_move_off {
+    //cursor: pointer;
+    background: none;
+    //background-size: cover;
+}
+

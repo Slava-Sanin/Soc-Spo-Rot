@@ -12,7 +12,6 @@ var p3 = new Rotms();
 //st_Player PlayerDlg, ComputerDlg;
 
 var level_in_text_format = "";
-
 var timer;
-
 var prev_game = 0;
+var virtual_buttons_moving = 0;

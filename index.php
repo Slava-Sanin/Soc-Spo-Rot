@@ -2,34 +2,37 @@
 // Start the session
 session_start();
 $_SESSION['error'] = '';
-$_SESSION['user_login'] = '';
-$_SESSION['user_email'] = '';
+
 ?>
 
 <html lang="en">
 <!--*******************************************************************-->
 <head>
 
-	<title>SocSpoRot</title>
+	<title>Soc-Spo-Rot</title>
 	<meta charset="utf-8">
+	<meta name="description" content="logical game, logical games, logical games for web, soc-spo-rot, socsporot, socoban, sokoban, spot, spots, rotm, rotms">
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>-->
-	<script src="Scripts/jquery/1.12.2/jquery.min.js"></script>
+	<script src="Scripts/JQuery/1.12.2/jquery.min.js"></script>
 
 	<!--	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">-->
-	<link rel="stylesheet" href="Scripts/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="Scripts/UI/1.11.4/themes/smoothness/jquery-ui.css">
 
 	<!--	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>-->
 
 	<!--	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>-->
-	<script src="Scripts/ui/1.11.4/jquery-ui.js"></script>
+	<script src="Scripts/UI/1.11.4/jquery-ui.js"></script>
 
 	<!--	<link rel="stylesheet" href="http://code.jquery.com/resources/demos/style.css">-->
 
+	<link rel="stylesheet" type="text/css" href="CSS/header.css">
 	<link rel="stylesheet" type="text/css" href="CSS/socsporot.css">
 	<link rel="stylesheet" type="text/css" href="CSS/login.css">
-
+    <link rel="icon" href="/G4W/images/spot.png" type="image/gif" sizes="16x16">  <!-- favicon -->
+	
 </head>
 <!--*******************************************************************-->
 <body>
@@ -37,20 +40,24 @@ $_SESSION['user_email'] = '';
 	<div class="wraper">
 <!---->
 		<div class="header">
-			<p><img src="G4W/images/spot.png"><span> Soc-Spo-Rot - Logical Games for WEB </span> </p>
+<!--			<p><img src="G4W/images/spot.png"><span> Soc-Spo-Rot.com - Logical Games for WEB </span> </p>-->
+			<?php include 'logo.php' ?>
 		</div>
 <!---->
 <?php
-	if ( !isset($_SESSION['username_and_password_is']) OR ( isset($_SESSION['username_and_password_is']) AND ($_SESSION["username_and_password_is"] == false) ) )
-	require 'login.php';
+	$edit_link = '#';
+    $edit_target = '';
+
+	if ( !isset($_SESSION['username_and_password_is']) OR ( isset($_SESSION['username_and_password_is']) AND ($_SESSION["username_and_password_is"] == false) ) )	require 'login.php';
+	else { $edit_link = 'Support/edit_profile.php'; $edit_target = 'target="_blank"'; }
 ?>
 <!---->
 		<div class="menu">
 			<a href="#">File</a>
-			<a href="#">Edit</a>
+			<a href="<?= $edit_link ?>" <?= $edit_target ?> >Edit</a>
 			<a href="#">Options</a>
 			<a id="IDM_Exit" href="logout.php">Exit</a>
-			<a href="#">Help</a>
+			<a href="https://www.youtube.com/watch?v=YQYePZamCs0" target="_blank">Help</a>
 		</div>
 <!---->
 		<hr>
@@ -58,11 +65,22 @@ $_SESSION['user_email'] = '';
 		<div class="toolbar">
 
 <?php
-	if (isset($_SESSION['username_and_password_is'])) {
+	if (isset($_SESSION['username_and_password_is']))
+	{
 		if ($_SESSION["username_and_password_is"] == true) {
 			echo '<button id="btn-socoban"></button>
 				  <button id="btn-spot"></button>
 				  <button id="btn-rotms"></button>';
+            echo
+                  '
+                  <style>
+                     #tabs {visibility: hidden;}
+                     #tabs-1, #tabs-2, #tabs-3  { visibility: hidden;}
+                     li[aria-controls="tabs-1"] { visibility: hidden;}
+                     li[aria-controls="tabs-2"] { visibility: hidden;}
+                     li[aria-controls="tabs-3"] { visibility: hidden;}
+                  </style> 
+                  ';
 		}
 	}
 ?>
@@ -91,6 +109,33 @@ $_SESSION['user_email'] = '';
 
 			</div>
 <!--	end	Player and Computer colors in game Spot		-->
+
+
+<!--    Virtual buttons (arrows) for sokoban     -->
+            <div class="virtual_buttons">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th></th>
+                            <th id="virtual_up" onclick="p1.movetop(72);"></th>
+                            <th></th>
+                        </tr>
+
+                        <tr>
+                            <th id="virtual_left" onclick="p1.movetop(75);"></th>
+                            <th id="virtual_move" onmousemove="moveVirtualButtons(event);">+</th>
+                            <th id="virtual_right" onclick="p1.movetop(77);"></th>
+                        </tr>
+
+                        <tr>
+                            <th></th>
+                            <th id="virtual_down" onclick="p1.movetop(80);"></th>
+                            <th></th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+<!--    End Virtual buttons (arrows) for sokoban     -->
 
 		</div>
 		
@@ -124,7 +169,7 @@ $_SESSION['user_email'] = '';
 
 					<div class="board">
 						<?php
-						include 'spot_content.php';
+							include 'spot_content.php';
 						?>
 					</div>
 
@@ -134,7 +179,7 @@ $_SESSION['user_email'] = '';
 
 					<div class="board">
 						<?php
-						include 'rotms_content.php';
+							include 'rotms_content.php';
 						?>
 					</div>
 
@@ -220,6 +265,10 @@ $_SESSION['user_email'] = '';
 		</div>
 	</div>
 
+    <div class="footer" style="text-align: center; font-size: 10pt;">
+        <p style="margin-top: 6px"> © Viacheslav Sanin - 2017 - socsporot@gmail.com </p>
+    </div>
+
 </body>
 </html>
 <!-***********************************************************************->
@@ -241,6 +290,17 @@ $_SESSION['user_email'] = '';
 
 		$("#btn-socoban").click(function(){
 			$(this).hide();
+            //p1 = new Socoban();
+
+            $("#tabs").css("visibility","visible");
+            $("#tabs-1").css("visibility","visible");
+            $('li[aria-controls="tabs-1"]').css("visibility","visible");
+
+             //$("#tabs").css("visibility: visible");
+//            $("#tabs").show();
+//            $("li[aria-controls='tabs-1']").show();
+//            $("#tabs-1").show();
+
 			//p1 = new Socoban();
 			gamecode = 1;
             p1.change_level();
@@ -255,19 +315,29 @@ $_SESSION['user_email'] = '';
 		$("#btn-spot").click(function(){
 			$(this).hide();
 			//p2 = new Spot();
-			gamecode = 2;
+
+            $("#tabs").css("visibility","visible");
+            $("#tabs-2").css("visibility","visible");
+            $('li[aria-controls="tabs-2"]').css("visibility","visible");
+
+            gamecode = 2;
 			p2.is_loaded = 1;
 			p2.init();
 			$("#ui-id-2").click();
 			//	$("#tabs-1 div.board").focus();
-			$(".status").html('<div id="status_spot"> <div class="time"> Time of game: </div><div class="player1"> Player(1): </div><div class="player2"> Computer(2): </div></div>');
+//			$(".status").html('<div id="status_spot"> <div class="time"> Time of game: </div><div class="player"> Player(1): </div><div class="player"> Computer(2): </div></div>');
 			loaded++;
 		});
 
 		$("#btn-rotms").click(function(){
 			$(this).hide();
 			//p3 = new Rotms();
-			gamecode = 3;
+
+            $("#tabs").css("visibility","visible");
+            $("#tabs-3").css("visibility","visible");
+            $('li[aria-controls="tabs-3"]').css("visibility","visible");
+
+            gamecode = 3;
 			p3.change_level();
 			p3.init();
 			$("#ui-id-3").click();
@@ -372,7 +442,8 @@ $_SESSION['user_email'] = '';
 			switch (gamecode)
 			{
 				case 1:
-					if (p1.level == 20) break;
+					if (!p1.is_loaded) break;
+				    if (p1.level == 20) break;
 					p1.level++;
 					$("#tabs-1 .scroll .lev-position").css("height", 15 * p1.level + 4);
 					p1.change_level();
@@ -381,6 +452,7 @@ $_SESSION['user_email'] = '';
 					InitStatus();
 					break;
 				case 3:
+                    if (!p3.is_loaded) break;
 					if (p3.level == 20) break;
 					p3.level++;
 					$("#tabs-3 .scroll .lev-position").css("height", 15 * p3.level + 4);
@@ -399,14 +471,17 @@ $_SESSION['user_email'] = '';
 			switch (gamecode)
 			{
 				case 1:
-					p1.init();
+                    if (!p1.is_loaded) break;
+				    p1.init();
 					InitStatus();
 					break;
 				case 2:
+                    if (!p2.is_loaded) break;
 					p2.init();
 					InitStatus();
 					break;
 				case 3:
+                    if (!p3.is_loaded) break;
 					p3.init();
 					InitStatus();
 					break;
@@ -421,6 +496,30 @@ $_SESSION['user_email'] = '';
 			p2.redraw();
 			//return false;
 		});
+
+		$("#virtual_move").click(function(){
+            if (virtual_buttons_moving == 0)
+                {
+                   virtual_buttons_moving = 1;
+                   $("#virtual_move").removeClass().addClass("virtual_move_on");
+                }
+            else
+                {
+                    virtual_buttons_moving = 0;
+                    $("#virtual_move").removeClass().addClass("virtual_move_off");
+                }
+            //return false;
+		});
+
+		document.onclick = function (event) {
+			moveVirtualButtons(event);
+            if (event.target.id == "virtual_move") return;
+            else
+            {
+                virtual_buttons_moving = 0;
+                $("#virtual_move").removeClass().addClass("virtual_move_off");
+            }
+		}
 
 		$("#first-or-second").click(function(){
 			let temp = $("#Player_is").text();
@@ -444,12 +543,15 @@ $_SESSION['user_email'] = '';
 
 		$("#tabs").tabs();
 
+//		$(".main-window").css("display","block");
+
         $("#btn-undo").click(function(){
 			if (!loaded) return;
 			// Move back.
             switch (gamecode)
             {
                 case 1: // in Socoban.
+                    if (!p1.is_loaded) break;
                     if (p1.moves == 0) return;
                     if (p1.level_is_completed == false) p1.Undo();
                     break;
@@ -457,6 +559,7 @@ $_SESSION['user_email'] = '';
 
                     break;
                 case 3: // in Rotms.
+                    if (!p3.is_loaded) break;
 					if (p3.moves == 0) return;
 					if (p3.level_is_completed == false) p3.Undo();
                     break;
@@ -470,6 +573,7 @@ $_SESSION['user_email'] = '';
 		$(document).keydown(function(e) {
 			if (!loaded) return;
 			if (gamecode != 1) return;
+            if (!p1.is_loaded) return;
 			e = e || window.event;
 			switch(e.which || e.keyCode) {
 				case 37: // left
@@ -497,7 +601,7 @@ $_SESSION['user_email'] = '';
 //		$("#IDM_Exit").click()(function(){
 ////			Session["username_and_password_is"] = null;
 ////			$_SESSION["username_and_password_is"] = false;
-//			window.location = "http://localhost:9090/My_Sites/SocSpoRot/logout.php";
+//			window.location = "logout.php";
 //			//EnableMenuItem(GetMenu(hwnd), IDM_Undo, MF_GRAYED);
 //			//$(this).prop('disabled',true);
 //		});

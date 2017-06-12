@@ -156,7 +156,7 @@ Socoban.prototype.change_level = function()
 //    sprintf(str, "%d.soc", this.level);
 //    strcat(this.filename, str);
 //this.level
-    this.filename = "G4W/socoban/LEV" + this.level + ".SOC";
+    this.filename = "G4W/socoban/lev" + this.level + ".soc";
 }
 //////////////////////////////////////////////////////////////////////////
 

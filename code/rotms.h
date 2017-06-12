@@ -158,7 +158,7 @@ Rotms.prototype.change_level = function()
 //    strcat(filename, "\\rotms\\lev");
 //    sprintf(str, "%d.rot", level);
 //    strcat(filename, str);
-    this.filename = "G4W/rotms/LEV" + this.level + ".ROT";
+    this.filename = "G4W/rotms/lev" + this.level + ".rot";
 }
 //////////////////////////////////////////////////////////////////////////
 

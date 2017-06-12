@@ -27,10 +27,16 @@ function InitStatus()
 
 //    if (MF_CHECKED == GetMenuState(GetMenu(hwnd), IDM_Status_Off, MF_BYCOMMAND)) return;
 //    GetClientRect(hwnd, &WinDim);
+
     gamecode = $("#tabs").tabs("option", "active") + 1;
+
     if (gamecode == 2) $(".Spot_toolbar").css("display","block");
     else $(".Spot_toolbar").css("display","none");
+
     if (!loaded) return;
+
+    if (gamecode == 1) $(".virtual_buttons").css("display","block");
+        else $(".virtual_buttons").css("display","none");
 
     switch (gamecode)
     {
@@ -69,9 +75,16 @@ function InitStatus()
             sec = p2.retime();
             p2.check_spots_number();
             str1 = "Time of game: " + parseInt(sec/3600) + ":" + parseInt(sec/60%60) + ":" + parseInt(sec%60);
-            str2 = "Player(" + p2.Player.is + "): " + p2.Player.spots;
-            str3 = "Computer(" + p2.Computer.is + "): " + p2.Computer.spots;
-            $(".status").html('<div id="status_spot"> <div class="time">' + str1 +'</div><div class="player">' + str2 + '</div><div class="player">' + str3 + '</div></div>');
+            //str2 = "Player(" + p2.Player.is + "): " + p2.Player.spots;
+            let me_is;  // x > y ? y : x;
+            me_is = p2.Player.is == 1 ? "First" : "Second";
+            str2 = "Player(" + me_is + "): " + p2.Player.spots;
+            //str3 = "Computer(" + p2.Computer.is + "): " + p2.Computer.spots;
+            me_is = p2.Computer.is == 1 ? "First" : "Second";
+            str3 = "Computer(" + me_is + "): " + p2.Computer.spots;
+
+            $(".status").html('<div id="status_spot"><div class="time">' + str1 +'</div><div class="player" style="color:' + GetColor(PlayerDlg.color) + '">' + str2 + '</div><div class="player" style="color:' + GetColor(ComputerDlg.color) + '">' + str3 + '</div></div>');
+
             break;
 
         case 3: // Rotms status.
@@ -115,7 +128,8 @@ function SomeArrow()
 }
 //////////////////////////////////////////////////////////////////////////
 
-
+//////////////////////////////////////////////////////////////////////////
+//                  Sound on/off
 //////////////////////////////////////////////////////////////////////////
 function Sound_On_Off()
 {
@@ -132,6 +146,8 @@ function Sound_On_Off()
             $("#btn-sound").removeClass("no-sound");
          }
 }
+//////////////////////////////////////////////////////////////////////////
+
 
 //////////////////////////////////////////////////////////////////////////
 // Playing needed sound in current time.
@@ -148,39 +164,48 @@ function PlayMySound(soundname)
         myAudio.play();
     }
 }
-/////////////////////////// Changing Player color in Spot game ///////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////////////////////////////
+//                  Changing Player color in Spot game
+//////////////////////////////////////////////////////////////////////////
 function Change_Player_color()
 {
     //console.log(document.forms["Player"].color.value);
 
     PlayerDlg.color = document.forms["Player"].color.value;
-                        if (PlayerDlg.color == ComputerDlg.color)
-                        {
-                            ComputerDlg.color++;
-                            if (ComputerDlg.color > 6) ComputerDlg.color = 3;
-                            document.forms["Computer"].elements[ComputerDlg.color-2]["checked"] = true;
+    if (PlayerDlg.color == ComputerDlg.color)
+    {
+        ComputerDlg.color++;
+        if (ComputerDlg.color > 6) ComputerDlg.color = 2;
+        document.forms["Computer"].elements[ComputerDlg.color-2]["checked"] = true;
 
-
-                            //console.log(document.forms["Computer"].elements[ComputerDlg.color-2]);
-                        }
+        //console.log(document.forms["Computer"].elements[ComputerDlg.color-2]);
+    }
   //  $(".Spot_color.left").css("background", "url('../G4W/images/Spot/spots.png') -80px -120px no-repeat black");
     $(".Spot_color.left").css("background", "url('G4W/images/Spot/spots.png') -80px -" + 40*PlayerDlg.color + "px no-repeat black");
     $(".Spot_color.right").css("background", "url('G4W/images/Spot/spots.png') -80px -" + 40*ComputerDlg.color + "px no-repeat black");
 }
-/////////////////////////// Changing Computer color in Spot game///////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////////////////////////////
+//                  Changing Computer color in Spot game
+//////////////////////////////////////////////////////////////////////////
 function Change_Computer_color()
 {
     //console.log(document.forms["Computer"].color.value);
 
     ComputerDlg.color = document.forms["Computer"].color.value;
-                        if (ComputerDlg.color == PlayerDlg.color)
-                        {
-                            PlayerDlg.color++;
-                            if (PlayerDlg.color > 6) PlayerDlg.color = 2;
-                            document.forms["Player"].elements[PlayerDlg.color-2]["checked"] = true;
+    if (ComputerDlg.color == PlayerDlg.color)
+    {
+        PlayerDlg.color++;
+        if (PlayerDlg.color > 6) PlayerDlg.color = 2;
+        document.forms["Player"].elements[PlayerDlg.color-2]["checked"] = true;
 
-                            //console.log(document.forms["Player"].elements[PlayerDlg.color-2]);
-                        }
+        //console.log(document.forms["Player"].elements[PlayerDlg.color-2]);
+    }
     $(".Spot_color.left").css("background", "url('G4W/images/Spot/spots.png') -80px -" + 40*PlayerDlg.color + "px no-repeat black");
     $(".Spot_color.right").css("background", "url('G4W/images/Spot/spots.png') -80px -" + 40*ComputerDlg.color + "px no-repeat black");
 }
@@ -188,7 +213,7 @@ function Change_Computer_color()
 
 
 //////////////////////////////////////////////////////////////////////////
-//            Delay in milliseconds
+//                      Delay in milliseconds
 //////////////////////////////////////////////////////////////////////////
 function Sleep(milliseconds)
 {
@@ -198,5 +223,35 @@ function Sleep(milliseconds)
     if ((new Date().getTime() - start) > milliseconds) return;
   }
   while(1);
+}
+//////////////////////////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////////////////////////////
+//                      Get color of player or computer
+//////////////////////////////////////////////////////////////////////////
+function GetColor(color)
+{
+    switch (color) {
+        case 2:  return "red";
+        case 3:  return "blue";
+        case 4:  return "cadetblue";
+        case 5:  return "yellow";
+        case 6:  return "green";
+        case 7:  return "yellow";
+    }
+}
+//////////////////////////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////////////////////////////
+//                      Moving the Virtual Buttons of Sokoban
+//////////////////////////////////////////////////////////////////////////
+function moveVirtualButtons(e)
+{
+    //e.preventDefault();
+    let x = e.clientX - 137/2;
+    let y = e.clientY - 137/2;
+    if (virtual_buttons_moving) $("div.virtual_buttons").css("left", x).css("top", y).css("position","absolute");
 }
 //////////////////////////////////////////////////////////////////////////

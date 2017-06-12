@@ -35,7 +35,7 @@ function my_filter($string, $regex_chars)
     {
         $char = substr($regex_chars, $i, 1);
         $string = str_replace($char, '', $string);
-        echo $string . '<br>';
+//        echo $string . '<br>';
     }
    return $string;
 }
@@ -44,62 +44,59 @@ function my_filter($string, $regex_chars)
 require('get_user_info.php');
 
 ///////////////////////////////////////////////////////////////////////////////////
-echo "<br><br>";
-echo "<p style='clear: both; margin-top: 50px'>";
-echo "SELECT username, password FROM users WHERE username = '$username' AND password = MD5('$password')";
-echo "</p>";
+//echo "<br><br>";
+//echo "<p style='clear: both; margin-top: 50px'>";
+//echo "SELECT username, password FROM users WHERE username = '$username' AND password = MD5('$password')";
+//echo "</p>";
 // Create a query for the database
-$query = "SELECT username, password FROM users WHERE username = '$username' AND password = MD5('$password')";
+$query = "SELECT * FROM users WHERE username = '$username' AND password = MD5('$password')";
 
 // Get a response from the database by sending the connection
 // and the query
 $response = @mysqli_query($dbc, $query);
 
 // If the query executed properly proceed
-if($response){
-
-    echo '<table align="left" cellspacing="5" cellpadding="8">                
-                <tr>
-                    <td align="left"><b>Username</b></td>
-                    <td align="left"><b>Password</b></td>
-                </tr>';
-
+if($response)
+{
     // mysqli_fetch_array will return a row of data from the query
-    // until no further data is available
-    while($row = mysqli_fetch_array($response)){
+    $row = mysqli_fetch_array($response);
+//    echo "<pre>";
+//    print_r($row);
+//    echo "</pre>";
+//    mysqli_close($dbc);
+//    die();
+    if ($row["activated"])
+    {
     // if i am here - username and password is founded
         $_SESSION["username_and_password_is"] = true;
-        echo '<tr><td align="left">' .
-            $row['username'] . '</td><td align="left">' .
-            $row['password'] . '</td><td align="left">';
-        echo '</tr>';
+
+        $_SESSION["user_login"] = $username;
+        $_SESSION["user_password"] = $password;
+        $_SESSION["user_email"] = $row["email"];
+        $_SESSION["user_fname"] = $row["FirstName"];
+        $_SESSION["user_lname"] = $row["FamilyName"];
+        $_SESSION["user_country"] = $row["country"];
+        $_SESSION["token"] = $row["token"];
+
+        $query = "UPDATE users SET last_visit = CURRENT_DATE WHERE username = '$username'";
+        $response = @mysqli_query($dbc, $query);
     }
-
-    echo '</table>';
-
-    $query = "UPDATE users SET last_visit = CURRENT_DATE WHERE username = '$username'";
-    $response = @mysqli_query($dbc, $query);
-
-} else {
-
-    echo "Couldn't issue database query"."<br />";
-
-    echo mysqli_error($dbc);
-
 }
+else {
+        echo "Couldn't issue database query"."<br />";
+        echo mysqli_error($dbc);
+     }
 
 // Close connection to the database
 mysqli_close($dbc);
-
 ///////////////////////////////////////////////////////////////////////////////////
-
-//header("Location: http://localhost:9090/My_Sites/SocSpoRot/");
 
 $host  = $_SERVER['HTTP_HOST'];
 $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
 //$extra = 'mypage.php';
 //header("Location: http://$host$uri/$extra");
-header("Location: http://$host$uri/");
+
+header("Location: index.php");
 
 exit;
 

@@ -36,7 +36,6 @@ function Spot() {
     this.Player = Object.create(st_Player);
     this.Computer = Object.create(st_Player);
     this.who_is_now;
-//    this.table_was_changed;
     this.error;
     this.first_step = true;
     this.first_X;
@@ -190,7 +189,7 @@ Spot.prototype.bild_ground = function()
 //////////////////////////////////////////////////////////////////////////
 Spot.prototype.change_level = function()
 {
-    this.filename = "G4W/spot/LEV" + this.level + ".SPO";
+    this.filename = "G4W/spot/lev" + this.level + ".spo";
 }
 //////////////////////////////////////////////////////////////////////////
 
