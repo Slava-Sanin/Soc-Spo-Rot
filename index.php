@@ -5,12 +5,12 @@ $_SESSION['error'] = '';
 
 ?>
 
+<!DOCTYPE html>
 <html lang="en">
 <!--*******************************************************************-->
 <head>
 
 	<title>Soc-Spo-Rot</title>
-	<meta charset="utf-8">
 	<meta name="description" content="logical game, logical games, logical games for web, soc-spo-rot, socsporot, socoban, sokoban, spot, spots, rotm, rotms">
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -54,10 +54,10 @@ $_SESSION['error'] = '';
 <!---->
 		<div class="menu">
 			<a href="#">File</a>
-			<a href="<?= $edit_link ?>" <?= $edit_target ?> >Edit</a>
+			<a id="IDM_Edit" href="<?= $edit_link ?>" <?= $edit_target ?> >Edit<span class="tooltiptext">Edit Profile</span></a>
 			<a href="#">Options</a>
-			<a id="IDM_Exit" href="logout.php">Exit</a>
-			<a href="https://www.youtube.com/watch?v=YQYePZamCs0" target="_blank">Help</a>
+			<a id="IDM_Exit" href="logout.php">Exit<span class="tooltiptext">Log off</span></a>
+			<a id="IDM_Help" href="https://www.youtube.com/watch?v=YQYePZamCs0" target="_blank">Help<span class="tooltiptext">See video on YouTube about the game</span></a>
 		</div>
 <!---->
 		<hr>
@@ -68,9 +68,9 @@ $_SESSION['error'] = '';
 	if (isset($_SESSION['username_and_password_is']))
 	{
 		if ($_SESSION["username_and_password_is"] == true) {
-			echo '<button id="btn-socoban"></button>
-				  <button id="btn-spot"></button>
-				  <button id="btn-rotms"></button>';
+			echo '<button id="btn-socoban"><span class="tooltiptext">Play Socoban</span></button>
+				  <button id="btn-spot"><span class="tooltiptext">Play Spot</span></button>
+				  <button id="btn-rotms"><span class="tooltiptext">Play Rotms</span></button>';
             echo
                   '
                   <style>
@@ -86,11 +86,11 @@ $_SESSION['error'] = '';
 ?>
 
 <!-- <div class="separator1"></div> -->
-			<button id="btn-sound" class="sound">
+            <button id="btn-sound" class="sound"><span class="tooltiptext">Sound On/Off</span></button>
 			<button id="btn-save"></button>
-			<button id="btn-new"></button>
+			<button id="btn-new"><span class="tooltiptext">New game</span></button>
 			<button id="btn-finish" onclick="window.open('','_self').close();return false;"></button>
-			<button id="btn-undo"></button>
+			<button id="btn-undo"><span class="tooltiptext">Undo</span></button>
 
 <!--	Player and Computer colors in game Spot			-->
 			<div class="Spot_toolbar">
@@ -212,7 +212,7 @@ $_SESSION['error'] = '';
 						<div class="div4">
 							<div class="div5">
                 				<div class="div6">
-									<img src="G4W/images/men.png" height="60" width="60">
+									<img src="G4W/images/men.png" alt="men" height="60" width="60">
 								</div>
 
 								<div class="div9">
@@ -221,7 +221,7 @@ $_SESSION['error'] = '';
 								</div>
 
 								<div class="div6" style="float: right">
-									<img src="G4W/images/computer.jpg" height="60" width="60">
+									<img src="G4W/images/computer.jpg" alt="computer" height="60" width="60">
 								</div>
 							</div>
 
@@ -252,7 +252,7 @@ $_SESSION['error'] = '';
 							<div class="div13">
 								<div class="div8"></div>
 								<div class="div7"></div>
-								<button id="first-or-second" type="button"><></button>
+								<button id="first-or-second" type="button">&lt;&gt;</button>
 							</div>
 							<div id="Computer_is" class="div14">Second</div>
 						</div>
@@ -270,17 +270,17 @@ $_SESSION['error'] = '';
     </div>
 
 </body>
-</html>
-<!-***********************************************************************->
-<script>
 
-<?php require 'code/constants.h' ?>
-<?php require 'code/dialogs.h' ?>
-<?php require 'code/socoban.h' ?>
-<?php require 'code/spot.h' ?>
-<?php require 'code/rotms.h' ?>
-<?php require 'code/globals.h' ?>
-<?php require 'code/functions.cpp' ?>
+<!--***********************************************************************-->
+<script type="text/javascript">
+
+<?php include 'code/constants.h'; ?>
+<?php include 'code/dialogs.h'; ?>
+<?php require 'code/socoban.h'; ?>
+<?php require 'code/spot.h'; ?>
+<?php require 'code/rotms.h'; ?>
+<?php require 'code/globals.h'; ?>
+<?php require 'code/functions.cpp'; ?>
 <?php //require 'code/filesfunc.h' ?>
 <?php //require 'code/fire.h' ?>
 
@@ -610,3 +610,4 @@ $_SESSION['error'] = '';
 
 
 </script>
+</html>

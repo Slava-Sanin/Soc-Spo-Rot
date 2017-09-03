@@ -7,11 +7,11 @@
         </label>
         <input name="re" type="hidden" value="">
         <input type="submit" class="button-secondary" name="Submit" id="submit" value="Log in" onclick="check_login_input();">
-        <span>(<a href="Support/lostpassword.php">forgot?</a>) or  <a href="Support/register.php">&nbsp Register</a></span>
+        <span>(<a href="Support/lostpassword.php">forgot?</a>) or  <a href="Support/register.php">&nbsp;Register</a></span>
     </p>
 </form>
 
-<script>
+<script type="text/javascript">
 
     function check_login_input()
     {

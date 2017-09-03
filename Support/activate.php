@@ -15,7 +15,7 @@
         $response = @mysqli_query($dbc, $query);
         if ($response)
         {
-            echo "<script>";
+            echo "<script type=\"text/javascript\">";
 //            echo "alert('Your account was activated! You can login in Soc-Spo-Rot.com and anjoy playing the logical games.');";
             echo "alert('Now you are registered. Welcome member!.');";
             //echo "window.location.assign('http://$host/My_Sites/SocSpoRot/');";

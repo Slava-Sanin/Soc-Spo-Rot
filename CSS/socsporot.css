@@ -947,4 +947,28 @@ input[name="Player"],input[name="Computer"] {
     background: none;
     //background-size: cover;
 }
+/*----------------------------------------------*/
+.tooltiptext {
+    visibility: hidden;
+    width: auto;
+    background-color: #fffbcc;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    border: 1px solid black;
+    padding: 5px;
+    margin-top: 25px;
+    position: absolute;
+    z-index: 10;
+}
 
+button:hover .tooltiptext {
+    visibility: visible;
+}
+
+#IDM_Edit:hover .tooltiptext,
+#IDM_Help:hover .tooltiptext,
+#IDM_Exit:hover .tooltiptext {
+    visibility: visible;
+}
+/*----------------------------------------------*/
